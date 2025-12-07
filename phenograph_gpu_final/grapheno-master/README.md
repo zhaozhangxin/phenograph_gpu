@@ -19,6 +19,11 @@ This version has been modified to support newer RAPIDS versions (RAPIDS 23.12 wi
   4. Assign unified cluster labels to all data points
 
 ## Installation
+ First set up flexible channel priority
+```bash
+conda config --set channel_priority flexible
+```
+
 Install RAPIDS into new environment:
 ```bash
 conda create -n phenoGPU_test -c rapidsai -c nvidia -c conda-forge \
@@ -37,7 +42,7 @@ conda activate phenoGPU_test
 
 Install scikit-learn and scipy:
 ```bash
-mamba install scikit-learn scipy
+mamba install scikit-learn scipy ipykernel
 ```
 
 Install grapheno:
@@ -61,4 +66,10 @@ See `demo_phenographGPU.ipynb` for a complete example of chunked processing on l
 ### Visualization
 The notebook includes examples using cuML's TSNE and UMAP for cluster visualization:
 Generally speaking, the visual effect of UMAP is better and the clustering is more distinct.
+
+
+Install Firefox + GeckoDriver for saving the visualization as png
+```bash
+conda install -c conda-forge firefox geckodriver
+```
 
